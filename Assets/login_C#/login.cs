@@ -168,4 +168,10 @@ public class login : MonoBehaviour {
         isregister = false;
         SceneManager.LoadScene("SampleScene");
     }
+
+    //退出程序
+    public void OUT()
+    {
+        Application.Quit();
+    }
 }
