@@ -6,13 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using SpeechLib;
+using NGUI;
 
 namespace Totalk
 {
     //与NPC对话的接口
     interface ITalk
     {
-        void Speak(GameObject background,GameObject player, Image Speaker, Text speaktext, GameObject punctuation, string[] talk, int talklenght, int[] firstspeaknum, string speakimage1, string speakimage2,int punt1,int punt2);
+        void Speak(GameObject background,GameObject player, UITexture Speaker, UILabel speaktext, GameObject punctuation, string[] talk, int talklenght, int[] firstspeaknum, string speakimage1, string speakimage2,int punt1,int punt2);
         void Change(string str);
         bool EndSpeak();
     }
@@ -35,7 +36,7 @@ namespace Totalk
         private bool isendtalk = false;//判断是否结束聊天
         //public static int talktime = 0;//聊天的次数，序数，是为了判断玩家第几次聊天，然后根据序数来改变聊天内容
 
-        public void Speak(GameObject background, GameObject player, Image Speaker, Text speaktext, GameObject punctuation, string[] talk, int talklenght, int[] firstspeaknum, string speakimage1, string speakimage2,int pun1, int pun2)
+        public void Speak(GameObject background, GameObject player, UITexture Speaker, UILabel speaktext, GameObject punctuation, string[] talk, int talklenght, int[] firstspeaknum, string speakimage1, string speakimage2,int pun1, int pun2)
         {
             player.transform.GetComponent<FirstPersonController>().enabled = false;//用户不能移动
 
@@ -45,11 +46,11 @@ namespace Totalk
                 if(talknum == firstspeaknum[i])
                 {
                     speakimage = speakimage1;
-                    Speaker.sprite = Resources.Load<Sprite>(speakimage);//显示说话人的头像
+                    Speaker.mainTexture = Resources.Load<Texture>(speakimage);//显示说话人的头像
                     break;//跳出for循环
                 }
                 else speakimage = speakimage2;    
-                Speaker.sprite = Resources.Load<Sprite>(speakimage);//显示说话人的头像
+                Speaker.mainTexture = Resources.Load<Texture>(speakimage);//显示说话人的头像
             }
 
             speaktext.text = talk[talknum];//显示说话内容
@@ -67,7 +68,8 @@ namespace Totalk
 
                 if (talknum >= talklenght)
                 {
-                    background.SetActive(false);//聊天背景框消失
+                    //background.SetActive(false);//聊天背景框消失
+                    background.GetComponent<TweenPosition>().PlayReverse();
                     player.transform.GetComponent<FirstPersonController>().enabled = true;
 
                     punctuation.transform.GetChild(pun1).gameObject.SetActive(false);

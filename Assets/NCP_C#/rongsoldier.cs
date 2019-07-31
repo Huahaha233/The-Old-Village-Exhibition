@@ -10,8 +10,8 @@ public class rongsoldier : MonoBehaviour
     //戎地把守士兵
     public GameObject background;//聊天背景框
     public GameObject player;//玩家
-    public Image Speaker;//正在说话的人
-    public Text speaktext;//对话聊天框
+    public GameObject Speaker;//正在说话的人
+    public GameObject speaktext;//对话聊天框
     private bool checkidenty = false;//验证是否为当前物体触碰
     public GameObject punctuation;//任务标记点
     private int[] firstspeaknum;
@@ -31,7 +31,7 @@ public class rongsoldier : MonoBehaviour
     {
         if (background.activeSelf == true && checkidenty == true)
         {
-            Talk.Speak(background, player, Speaker, speaktext, punctuation, talk, 9, firstspeaknum, "youyu", "soldier",0,1);
+            Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, 9, firstspeaknum, "youyu", "soldier",0,1);
         }
         if (Talk.EndSpeak())
         {

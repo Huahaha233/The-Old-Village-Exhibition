@@ -10,8 +10,9 @@ public class Stone : MonoBehaviour {
     public GameObject background;//聊天背景框
     public GameObject player;//玩家
     public GameObject punctuation;//任务标记点
-    public Image Speaker;//正在说话的人
-    public Text speaktext;//对话聊天框
+    public GameObject Speaker;//正在说话的人
+    public GameObject speaktext;//对话聊天框
+    private bool checkidenty = false;//验证是否为当前物体触碰
     private bool istalk = false;//判断是否是聊天的状态
     private int[] firstspeaknum;
     private string[] talk = new string[50];
@@ -27,15 +28,17 @@ public class Stone : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && (Tips.activeSelf == true))
+        if (Input.GetKeyDown(KeyCode.F) && (Tips.GetComponent<TweenPosition>().value.x !=-1260) && checkidenty == true)
         {
-            background.SetActive(true);//激活聊天背景
+            //background.SetActive(true);//激活聊天背景
+            background.GetComponent<TweenPosition>().PlayForward();
             player.transform.GetComponent<FirstPersonController>().enabled = false;//用户不能移动
             istalk = true;
         }
-        if (istalk == true) Talk.Speak(background, player, Speaker, speaktext, punctuation, talk, 11, firstspeaknum, "player", "Stone",0,0);
+        if (istalk == true && checkidenty == true) Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, 11, firstspeaknum, "player", "Stone",0,0);
         if (Talk.EndSpeak())//聊天结束
         {
+            checkidenty = false;
             istalk = false;
         }
     }
@@ -62,10 +65,17 @@ public class Stone : MonoBehaviour {
     }
     public void OnTriggerEnter(Collider other)
     {
-        Tips.SetActive(true);//激活UI
+        if (transform.name != "oldman")
+        {
+            checkidenty = true;
+            Tips.transform.GetChild(0).GetComponent<UILabel>().text = "按下F查看雕像";
+        }
+        Tips.GetComponent<TweenPosition>().PlayForward();
+        //Tips.SetActive(true);//激活UI
     }
     public void OnTriggerExit(Collider other)
     {
-        Tips.SetActive(false);//关闭UI
+        //Tips.SetActive(false);//关闭UI
+        Tips.GetComponent<TweenPosition>().PlayReverse();
     }
 }

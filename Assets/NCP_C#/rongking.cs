@@ -10,8 +10,8 @@ public class rongking : MonoBehaviour {
     //戎地首领
     public GameObject background;//聊天背景框
     public GameObject player;//玩家
-    public Image Speaker;//正在说话的人
-    public Text speaktext;//对话聊天框
+    public GameObject Speaker;//正在说话的人
+    public GameObject speaktext;//对话聊天框
     public GameObject punctuation;//任务标记点
     public GameObject EndGame;//结束游戏图片
     private bool checkidenty=false;//验证是否为当前物体触碰
@@ -57,7 +57,7 @@ public class rongking : MonoBehaviour {
     {
         if (background.activeSelf == true && checkidenty == true)
         {
-            Talk.Speak(background, player, Speaker, speaktext, punctuation, talk, talklenght, firstspeaknum, "youyu", "rongking", pun1,pun2);
+            Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, talklenght, firstspeaknum, "youyu", "rongking", pun1,pun2);
         }
         if (Talk.EndSpeak())
         {
