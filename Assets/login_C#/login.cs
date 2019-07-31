@@ -142,7 +142,7 @@ public class login : MonoBehaviour {
         else
         {
             transform.Find("Tips").GetComponent<Text>().text = "信息错误！";
-            VerificationCode.Click();//验证码错误使用需要刷新验证码
+            //VerificationCode.Click();//验证码错误使用需要刷新验证码
         }
 
 

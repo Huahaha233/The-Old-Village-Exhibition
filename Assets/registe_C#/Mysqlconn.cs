@@ -92,7 +92,7 @@ public class Mysqlconn : MonoBehaviour {
         if (ReadMysql(Guser.text) == 1)
         {
             transform.Find("Tips").GetComponent<Text>().text="用户名已存在！";
-            VerificationCode.Click();//验证码错误使用需要刷新验证码
+            //VerificationCode.Click();//验证码错误使用需要刷新验证码
         }
         else if ( Gpsw.text!= Grepsw.text)
         {
@@ -101,7 +101,7 @@ public class Mysqlconn : MonoBehaviour {
         else if (Code != Gcode.text)//验证码输入正确
         {
             transform.Find("Tips").GetComponent<Text>().text = "验证码错误！";
-            VerificationCode.Click();//验证码错误使用需要刷新验证码
+            //VerificationCode.Click();//验证码错误使用需要刷新验证码
         }
         else
         {
