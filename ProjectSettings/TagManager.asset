@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Terrain
   - qinsoldier
+  - election
+  - free
+  - genealogy
   layers:
   - Default
   - TransparentFX

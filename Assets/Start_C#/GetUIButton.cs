@@ -33,6 +33,7 @@ public class GetUIButton : MonoBehaviour {
     #endregion
     private string Code_Str;//验证码字符串
     private string Answer = null;//密保问题的答案
+    public static bool islogin = false;//判断用户是登录
     private void Start()
     {
         //在开始界面，当用户点击“登录”“游客登录”按钮时，控制NGUI按钮组件移动，并激活登录UI
@@ -97,6 +98,7 @@ public class GetUIButton : MonoBehaviour {
             Tips.GetComponent<UILabel>().text = "登录成功!";
             Debug.Log("登录成功!");
             Login_Login();
+            islogin = true;
             SceneManager.LoadScene("");
         }
         else
@@ -104,6 +106,7 @@ public class GetUIButton : MonoBehaviour {
             Tips.GetComponent<UILabel>().text = "登录失败!";
             Debug.Log("登录失败!");
             SetCode();
+            islogin = false;
         }
     }
     #endregion

@@ -11,20 +11,15 @@ public class OutFreeWalk : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && outgametext.GetComponent<UISprite>().alpha == 0)
+        if (Input.GetKeyDown(KeyCode.Escape) && outgametext.GetComponent<TweenScale>().value == Vector3.zero)
         {
             FPS.transform.GetComponent<FirstPersonController>().enabled = true;
-            //激活退出游戏的按钮
-            //outgametext.SetActive(true);
-            outgametext.GetComponent<TweenAlpha>().to = 1;
-            outgametext.GetComponent<TweenAlpha>().PlayForward();
+            outgametext.GetComponent<TweenScale>().PlayForward();
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && outgametext.GetComponent<UISprite>().alpha == 1)
+        else if (Input.GetKeyDown(KeyCode.Escape) && outgametext.GetComponent<TweenScale>().value == Vector3.one)
         {
             FPS.transform.GetComponent<FirstPersonController>().enabled = false;
-            //取消退出游戏的按钮
-            outgametext.GetComponent<TweenAlpha>().PlayReverse();
-            //outgametext.SetActive(false);
+            outgametext.GetComponent<TweenScale>().PlayReverse();
         }
         
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
+using NGUI;
 
 public class Book : MonoBehaviour {
 
@@ -17,27 +18,39 @@ public class Book : MonoBehaviour {
     //自由浏览模式
     public void Free()
     {
-        if (free.activeSelf == false) free.SetActive(true);
-        else free.SetActive(false);
+        BackPlay("election",1);
+        if (free.transform.GetChild(0).GetComponent<TweenScale>().value == Vector3.zero) BackPlay("free", 0);
+        else
+        {
+            BackPlay("free", 1);
+            BackPlay("election", 0);
+        }
     }
 
     //家谱模式模式
     public void Genealogy()
     {
-        if (genealogy.activeSelf == false) genealogy.SetActive(true);
-        else genealogy.SetActive(false);
+        BackPlay("election", 1);
+        if (genealogy.transform.GetChild(0).GetComponent<TweenScale>().value == Vector3.zero) BackPlay("genealogy", 0);
+        else {
+            BackPlay("genealogy", 1);
+            BackPlay("election", 0);
+        }
+        
     }
 
     //实物展示模式
     public void ShowThing()
     {
+        BackPlay("election", 1);
         SceneManager.LoadScene("Exhibition");
     }
     //退书阅读模式
     public void Back()
     {
         player.GetComponent<FirstPersonController>().gameObject.SetActive(true);
-        bg.SetActive(false);
+        BackPlay("election", 1);
+        bg.GetComponent<TweenPosition>().PlayReverse();
     }
 
     //自由浏览模式中建筑1的跳转按钮
@@ -50,8 +63,18 @@ public class Book : MonoBehaviour {
     public void Genealogy1()
     {
         //判断用户是否为注册用户，然后判断是否开启家谱功能模块
-        if (login.isregister == true) SceneManager.LoadScene("genealogyUI_Yu");
-        else tips.SetActive(true);
-        
+        if (GetUIButton.islogin == true) SceneManager.LoadScene("genealogyUI_Yu");
+        else tips.GetComponent<TweenScale>().PlayForward();
     }
+    private void BackPlay(string str,int x)
+    {
+        GameObject[] objects= GameObject.FindGameObjectsWithTag(str);
+        foreach (GameObject obj in objects)
+        {
+            if(x==0) obj.GetComponent<TweenScale>().PlayForward();
+                else obj.GetComponent<TweenScale>().PlayReverse();
+        }
+
+    }
+    
 }
