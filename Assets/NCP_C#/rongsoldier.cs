@@ -29,7 +29,7 @@ public class rongsoldier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (background.activeSelf == true && checkidenty == true)
+        if (background.GetComponent<TweenPosition>().value != new Vector3(200, -740, 0) && checkidenty == true)
         {
             Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, 9, firstspeaknum, "youyu", "soldier",0,1);
         }
@@ -61,7 +61,8 @@ public class rongsoldier : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (transform.name == "rongsodiercutoff") checkidenty = true;
-        background.SetActive(true);//激活聊天背景
+        background.GetComponent<TweenPosition>().PlayForward();//激活聊天背景
+
     }
     public void OnTriggerExit(Collider other)
     {

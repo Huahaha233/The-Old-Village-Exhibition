@@ -53,11 +53,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 8582d80af484cd849a062b94a424e8f8, type: 2}
   mSprites:
-  - name: book
-    x: 2901
-    y: 1740
-    width: 1024
-    height: 709
+  - name: "\u300A\u5929\u5929\u6349\u5996\u8BB0\u300B\u5168\u5957\u7D20\u6750-005_\u7231\u7ED9\u7F51_aigei_com"
+    x: 2968
+    y: 2295
+    width: 163
+    height: 35
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -66,11 +66,11 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: buildmore
-    x: 2901
-    y: 1322
-    width: 610
-    height: 417
+  - name: 654b12fc74031dbcedffeec9b494caf9
+    x: 3595
+    y: 3470
+    width: 433
+    height: 626
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -79,24 +79,11 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: bulid1
-    x: 0
-    y: 1085
-    width: 640
-    height: 357
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: genealogyMore
-    x: 3729
-    y: 3505
-    width: 217
-    height: 290
+  - name: background
+    x: 3077
+    y: 2766
+    width: 834
+    height: 428
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -107,7 +94,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: "\u4E09\u56FD\u5FD79-\u53EF\u7528\u7D20\u6750-297-1_\u7231\u7ED9\u7F51_aigei_com"
     x: 1876
-    y: 1681
+    y: 3328
     width: 1024
     height: 768
     borderLeft: 0
@@ -119,12 +106,12 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u4E0B\u62C9\u6846"
-    x: 1696
-    y: 1725
+    x: 2868
+    y: 2842
     width: 164
     height: 79
-    borderLeft: 20
-    borderRight: 60
+    borderLeft: 0
+    borderRight: 0
     borderTop: 0
     borderBottom: 0
     paddingLeft: 20
@@ -144,21 +131,8 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: "\u4F59\u6C0F\u5BB6\u8C31"
-    x: 1876
-    y: 2450
-    width: 1334
-    height: 1646
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: "\u53E4\u98CE\u4EFB\u52A1\u6846"
-    x: 3211
+    x: 3077
     y: 3195
     width: 517
     height: 901
@@ -171,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u6309\u94AE"
-    x: 641
-    y: 1241
+    x: 3672
+    y: 2365
     width: 413
     height: 99
     borderLeft: 0
@@ -183,22 +157,9 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: "\u53E4\u98CE\u63D0\u793A"
-    x: 1696
-    y: 1484
-    width: 947
-    height: 196
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: "\u53E4\u98CE\u7389"
-    x: 651
-    y: 1341
+    x: 3178
+    y: 2273
     width: 493
     height: 492
     borderLeft: 0
@@ -210,8 +171,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F1"
-    x: 3211
-    y: 2734
+    x: 1876
+    y: 2461
     width: 650
     height: 460
     borderLeft: 0
@@ -223,8 +184,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F10"
-    x: 1145
-    y: 1163
+    x: 3519
+    y: 1671
     width: 533
     height: 300
     borderLeft: 0
@@ -236,8 +197,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F11"
-    x: 0
-    y: 1834
+    x: 1876
+    y: 2922
     width: 1200
     height: 405
     borderLeft: 0
@@ -249,8 +210,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F2"
-    x: 2230
-    y: 1183
+    x: 2968
+    y: 1631
     width: 533
     height: 300
     borderLeft: 0
@@ -262,8 +223,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F4"
-    x: 0
-    y: 1443
+    x: 1876
+    y: 2070
     width: 650
     height: 390
     borderLeft: 0
@@ -275,8 +236,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F5"
-    x: 3211
-    y: 2516
+    x: 0
+    y: 2022
     width: 650
     height: 217
     borderLeft: 0
@@ -288,8 +249,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F6"
-    x: 1201
-    y: 1805
+    x: 2527
+    y: 2331
     width: 650
     height: 434
     borderLeft: 0
@@ -301,8 +262,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F7"
-    x: 3512
-    y: 1234
+    x: 2527
+    y: 1825
     width: 440
     height: 505
     borderLeft: 0
@@ -314,8 +275,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F8"
-    x: 1696
-    y: 1183
+    x: 3519
+    y: 1972
     width: 533
     height: 300
     borderLeft: 0
@@ -327,8 +288,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u53E4\u98CE\u80CC\u666F9"
-    x: 3729
-    y: 3796
+    x: 3672
+    y: 2465
     width: 300
     height: 300
     borderLeft: 0
@@ -340,8 +301,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u80CC\u666F"
-    x: 1145
-    y: 1464
+    x: 2968
+    y: 1932
     width: 550
     height: 340
     borderLeft: 0
@@ -352,9 +313,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: "\u8868\u5355\u7EC4\u4EF6-\u4E0B\u62C9\u6846"
+    x: 2527
+    y: 2771
+    width: 188
+    height: 150
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 6
+    paddingTop: 25
+    paddingBottom: 25
   - name: "\u8F93\u5165\u6846"
-    x: 1696
-    y: 1701
+    x: 2716
+    y: 2771
     width: 163
     height: 23
     borderLeft: 0
@@ -366,8 +340,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: "\u8FD4\u56DE"
-    x: 2644
-    y: 1554
+    x: 2716
+    y: 2795
     width: 151
     height: 126
     borderLeft: 0

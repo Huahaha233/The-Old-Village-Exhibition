@@ -41,7 +41,7 @@ public class Qinbed : MonoBehaviour {
         {
             FPSC.transform.GetComponent<Animator>().SetBool("issleep", true);
             FPSC.transform.GetComponent<Animator>().SetBool("isawake", false);
-            Tips.transform.GetComponentInChildren<Text>().text = "按空格起床";
+            Tips.transform.GetChild(0).GetComponent<UILabel>().text = "按空格起床";
             if (Input.GetKeyDown(KeyCode.Space))
             {
 
@@ -66,15 +66,16 @@ public class Qinbed : MonoBehaviour {
     {
         if(Menu.tasknum == 2 || Menu.tasknum == 8)
         {
-        Tips.SetActive(true);//激活提示框
-        Tips.transform.GetComponentInChildren<Text>().text = "按下E睡觉";
+        //激活提示框
+        Tips.GetComponent<TweenPosition>().PlayForward();
+        Tips.transform.GetChild(0).GetComponent<UILabel>().text = "按下E睡觉";
         istouch = true;
         }
         
     }
     private void OnTriggerExit(Collider other)
     {
-        Tips.SetActive(false);//隐藏提示框
+        Tips.GetComponent<TweenPosition>().PlayReverse() ;//隐藏提示框
         FPSC.transform.GetComponent<Animator>().enabled = false;
     }
 }

@@ -45,17 +45,16 @@ public class rongking : MonoBehaviour {
             case 9:
                 transform.GetComponent<BoxCollider>().enabled = true;//重新激活物体的触发器功能
                 Talktext(talk2, 5, firstspeaknum2, 1,1);
-                
                 break;
             case 10:
-                EndGame.SetActive(true);
+                EndGame.GetComponent<TweenAlpha>().PlayForward();
                 Invoke("outgame", 3);//游戏结束，三秒后退出游戏
                 break;
         }
     }
     private void Talktext(string[] talk, int talklenght, int[] firstspeaknum, int pun1,int pun2)
     {
-        if (background.activeSelf == true && checkidenty == true)
+        if (background.GetComponent<TweenPosition>().value != new Vector3(200, -740, 0) && checkidenty == true)
         {
             Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, talklenght, firstspeaknum, "youyu", "rongking", pun1,pun2);
         }
@@ -105,15 +104,15 @@ public class rongking : MonoBehaviour {
         firstspeaknum2 = num2;
     }
     //退出游戏
-    public void Outgame()
+    public void outgame()
     {
         SceneManager.LoadScene("genealogyUI_Yu");//退出游戏后跳转到UI界面
     }
     public void OnTriggerEnter(Collider other)
     {
         if (transform.name == "rongking") checkidenty = true;
-        background.SetActive(true);//激活聊天背景
-        
+        background.GetComponent<TweenPosition>().PlayForward();//激活聊天背景
+
     }
     public void OnTriggerExit(Collider other)
     {

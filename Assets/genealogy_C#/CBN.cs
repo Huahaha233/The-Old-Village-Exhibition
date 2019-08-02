@@ -20,21 +20,21 @@ public class CBN : MonoBehaviour {
     {
         if (istouch == false)
         {
-            country.SetActive(true);
-            country.transform.GetComponentInChildren<Text>().text= "秦国境内";
+            country.GetComponent<TweenPosition>().PlayForward();
+            country.transform.GetChild(0).GetComponent<UILabel>().text="秦国境内";
             istouch = true;
             Invoke("Destory",3);
         }
         else
         {
-            country.SetActive(true);
-            country.transform.GetComponentInChildren<Text>().text = "戎地";
+            country.GetComponent<TweenPosition>().PlayForward();
+            country.transform.GetChild(0).GetComponent<UILabel>().text = "戎地";
             istouch = false;
             Invoke("Destory", 3); 
         }
     }
     private void Destory()
     {
-        country.SetActive(false);
+         country.GetComponent<TweenPosition>().PlayReverse();
     }
 }

@@ -49,7 +49,7 @@ public class qinsodier : MonoBehaviour {
 
     private void Talktext(string[] talk, int talklenght, int[] firstspeaknum, int pun1, int pun2)
     {
-        if (background.activeSelf == true && checkidenty == true)
+        if (background.GetComponent<TweenPosition>().value != new Vector3(200, -740, 0) && checkidenty == true)
         {
             Talk.Speak(background, player, Speaker.GetComponent<UITexture>(), speaktext.GetComponent<UILabel>(), punctuation, talk, talklenght, firstspeaknum, "youyu", "soldier", pun1, pun2);
         }
@@ -84,7 +84,7 @@ public class qinsodier : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         if (transform.name == "qincutoff1"|| transform.name == "qincutoff2") checkidenty = true;
-        background.SetActive(true);//激活聊天背景
+        background.GetComponent<TweenPosition>().PlayForward();//激活聊天背景
     }
     public void OnTriggerExit(Collider other)
     {

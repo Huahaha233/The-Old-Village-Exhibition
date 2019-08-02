@@ -17,7 +17,7 @@ public class Collider_rong : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Join_tips.activeSelf == true && Input.GetKeyDown(KeyCode.F)&&checkidenty==true)
+        if (Join_tips.GetComponent<TweenPosition>().value != new Vector3(0, 615, 0) && Input.GetKeyDown(KeyCode.F)&&checkidenty==true)
         {
             if (youyu.transform.position.z > 79)
                 youyu.transform.position = new Vector3(140, 42, 75);
@@ -30,13 +30,13 @@ public class Collider_rong : MonoBehaviour {
         if (transform.name == "building_10 loded") 
         {
             checkidenty = true;
-            Join_tips.SetActive(true);
-            Join_tips.transform.GetComponentInChildren<Text>().text = "按下F";
+            Join_tips.GetComponent<TweenPosition>().PlayForward();
+            Join_tips.transform.GetChild(0).transform.GetComponent<UILabel>().text = "按下F";
         }
         
     }
     private void OnTriggerExit(Collider other)
     {
-        Join_tips.SetActive(false);
+        Join_tips.GetComponent<TweenPosition>().PlayReverse();
     }
 }
