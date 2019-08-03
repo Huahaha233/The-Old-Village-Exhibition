@@ -7,14 +7,13 @@ using System.Threading;
 
 public class genealogy_Yu : MonoBehaviour {
     //余氏家谱切换场景
-    public Text loadingText;
-    public Image progressBar;
-    private int curProgressValue = 0;
-    private int progressValue = 100;
+    public GameObject loadingText;
+    public GameObject progressBar;
+    private double curProgressValue = 0;
+    private double progressValue = 0.8;
     private bool isloding = false;
     // Use this for initialization
-    void Start () {
-    }
+    
     // Update is called once per frame
     void Update () {
         if (isloding == true) Loding();
@@ -22,10 +21,10 @@ public class genealogy_Yu : MonoBehaviour {
     public void ChangeScene_youyu()
     {
         //切换到由余场景
-        loadingText.gameObject.SetActive(true);
-        progressBar.gameObject.SetActive(true);
+        //loadingText.gameObject.SetActive(true);
+        //progressBar.gameObject.SetActive(true);
         isloding = true;
-        Invoke("ToScene",2f);
+        Invoke("ToScene",3f);
        
     }
     private void ToScene()
@@ -36,13 +35,13 @@ public class genealogy_Yu : MonoBehaviour {
     {
         if (curProgressValue < progressValue)
         {
-            curProgressValue++;
+            curProgressValue+=0.1;
         }
-        loadingText.text = curProgressValue + "%";//实时更新进度百分比的文本显示  
-        progressBar.fillAmount = curProgressValue / 100f;//实时更新滑动进度图片的fillAmount值  
-        if (curProgressValue == 100)
+        loadingText.GetComponent<UILabel>().text = curProgressValue*100 + "%";//实时更新进度百分比的文本显示  
+        progressBar.GetComponent<UISprite>().fillAmount = (float)curProgressValue;//实时更新滑动进度图片的fillAmount值  
+        if (curProgressValue == 0.8)
         {
-            loadingText.text = "加载成功";//文本显示完成OK  
+            loadingText.GetComponent<UILabel>().text = "加载成功";//文本显示完成OK
         }
     }
 }

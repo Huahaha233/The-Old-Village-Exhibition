@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NGUI;
 
 public class UIFlash : MonoBehaviour {
     //展示分类UI刷新
@@ -44,22 +45,21 @@ public class UIFlash : MonoBehaviour {
     //封装
     public void Change(string str1,string str2)
     {
-        GameObject.Find("Canvas/ThingMenu/Viewport/" + str1).gameObject.SetActive(true);
-        transform.Find("ThingMenu/Viewport/"+str1).GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(str2);
+        transform.Find("ThingMenu/" + str1).GetComponent<UITexture>().mainTexture = Resources.Load<Texture>(str2);
+        transform.Find("ThingMenu/" + str1).GetComponent<TweenScale>().PlayForward();
     }
     //关闭所有UI
     public void Close()
     {
         for (int i = 1; i < 5; i++)
         {
-            GameObject.Find("Canvas/ThingMenu/Viewport/Content" + i).gameObject.SetActive(false);
+            transform.Find("ThingMenu/Content" + i).GetComponent<TweenScale>().PlayReverse();
         }
 
         //关闭之前的所有UI，防止挡住
-        transform.Find("视频暂停").gameObject.SetActive(false);
-        transform.Find("视频播放").gameObject.SetActive(false);
+        transform.Find("视频播放暂停").GetComponent<TweenScale>().PlayReverse();
         transform.Find("Video").gameObject.SetActive(false);
-        transform.Find("Picture").gameObject.SetActive(false);
+        transform.Find("Picture").GetComponent<TweenAlpha>().PlayReverse();
 
     }
 }
