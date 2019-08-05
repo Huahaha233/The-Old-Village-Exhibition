@@ -5110,7 +5110,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 314
   mHeight: 104
-  mDepth: 1
+  mDepth: 22
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -11358,7 +11358,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 600
   mHeight: 200
-  mDepth: 0
+  mDepth: 21
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0

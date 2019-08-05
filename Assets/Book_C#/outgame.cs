@@ -32,6 +32,6 @@ public class outgame : MonoBehaviour
     }
     public void Click()
     {
-        SceneManager.LoadScene("login");
+        SceneManager.LoadScene("Start");
     }
 }

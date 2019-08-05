@@ -63,8 +63,8 @@ public class Book : MonoBehaviour {
     public void Genealogy1()
     {
         //判断用户是否为注册用户，然后判断是否开启家谱功能模块
-        if (GetUIButton.islogin == true) SceneManager.LoadScene("genealogyUI_Yu");
-        else tips.GetComponent<TweenScale>().PlayForward();
+        /*if (GetUIButton.islogin == true)*/ SceneManager.LoadScene("genealogyUI_Yu");
+        //else tips.GetComponent<TweenScale>().PlayForward();
     }
     private void BackPlay(string str,int x)
     {

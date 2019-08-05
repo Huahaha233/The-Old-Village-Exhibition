@@ -99,7 +99,7 @@ public class GetUIButton : MonoBehaviour {
             Debug.Log("登录成功!");
             Login_Login();
             islogin = true;
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("SampleScene");
         }
         else
         {
@@ -319,7 +319,7 @@ public class GetUIButton : MonoBehaviour {
     public void Start_NoLogin()
     {
         PlayContent("Start", 1);//在开始界面内，点击按钮后，开始界面的按钮和标题就必须回到显示方框之外
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("SampleScene");
     }
 
     //用户在开始界面选择退出按钮
@@ -401,6 +401,7 @@ public class GetUIButton : MonoBehaviour {
             Tips.GetComponent<UILabel>().text = "答案正确!";
             PlayContent("Forget", 1);
             PlayContent("Reset", 0);
+            Tips.GetComponent<UILabel>().text = "";
         }
         else Tips.GetComponent<UILabel>().text = "答案错误!";
     }
